@@ -1,0 +1,63 @@
+/* Kontejner */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Wraper grid sistema */
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* Ovo su kolone: */
+/*
+    lg = velike preko 992px,
+    m = srednje preko 768px,
+    sm = male preko 567px,
+
+    brojevi od 1 do 12 predstavljaju kolone. Standard u webu je da 100% ekrana predstavlja 12 kolona u grid sistemu
+    npr: col-lg-6 predstavlja širinu 6 kolona na velikim ekranima.
+    Pošto je maksimum 12 kolona, možemo postaviti dve kolone jednu do druge
+    npr: col-lg-4 možemo staviti 3 elementa jedno do drugog
+
+    Formula: maksimalne kolone / željeni broj kolona u jednom redu = broj koji treba stojati u nazivu klase
+*/
+[class^="col-"] {
+    padding: 15px;
+}
+
+.col-lg-4,
+.col-lg-6 {
+    /* Kada smo na manjim uređajima, nema svrhe stavljati kolone jednu do druge
+    jer je uređaj mali. Zato svakoj koloni dajemo širinu 100% kako bi oteralo ostale kolone u sledeći red */
+    width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .col-lg-6 {
+        width: 50%;
+    }
+
+    .col-lg-4 {
+        width: 33.33%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+}
